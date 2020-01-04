@@ -19,6 +19,7 @@ services:
       - thread_pool.write.queue_size=1000
       # increase number of open scroll requests at a time
       - search.max_open_scroll_context=5000
+      - "ES_JAVA_OPTS=-Xms4g -Xmx4g"
     volumes:
       #use a volume for persistence / performance
       - esdata:/usr/share/elasticsearch/data

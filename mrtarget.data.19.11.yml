@@ -1,0 +1,148 @@
+adverse-events:
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/adverse-events-2019-10-14.csv.gz
+biomarker: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/cancerbiomarkers-2018-05-01.tsv
+chembl-component:
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/chembl_target_component_rest_api-2019-08-20.json.gz
+chembl-indication:
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/chembl_drug_indication_rest_api-2019-08-20.json.gz
+chembl-mechanism:
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/chembl_mechanism_rest_api-2019-08-20.json.gz
+chembl-molecule:
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/chembl_molecule_rest_api-2019-08-20.json.gz
+chembl-protein:
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/chembl_protein_class_rest_api-2019-08-20.json.gz
+chembl-target:
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/chembl_target_rest_api-2019-08-20.json.gz
+chemical-probes-1: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/chemicalprobes_portalprobes-2019-10-31.tsv
+chemical-probes-2: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/chemicalprobes_probeminer-2019-07-01.tsv
+datasources_to_datatypes:
+  cancer_gene_census: somatic_mutation
+  chembl: known_drug
+  crispr: affected_pathway
+  europepmc: literature
+  eva: genetic_association
+  eva_somatic: somatic_mutation
+  expression_atlas: rna_expression
+  gene2phenotype: genetic_association
+  genomics_england: genetic_association
+  gwas_catalog: genetic_association
+  intogen: somatic_mutation
+  phenodigm: animal_model
+  phewas_catalog: genetic_association
+  postgap: genetic_association
+  progeny: affected_pathway
+  reactome: affected_pathway
+  slapenrich: affected_pathway
+  sysbio: affected_pathway
+  uniprot: genetic_association
+  uniprot_literature: genetic_association
+  uniprot_somatic: somatic_mutation
+ddr:
+  evidence-count: 3
+  score-threshold: 0.1
+disease-phenotype:
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/charite_HP_ORDO_07Oct15-2019-10-31.owl
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/rareIBDpheno-2019-10-31.owl
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/immune_disease_2_pheno-2019-10-31.owl
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/ordo_hpo_mappings-2019-10-31.owl
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/rareAlbuminuria_associations_03Jun15-2019-10-31.owl
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/ibd_2_pheno_associations-2019-10-31.owl
+drugbank:
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/drugbank-2019-10-22.csv.gz
+eco-scores: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/eco_scores-2019-10-31.tsv
+ensembl-filename: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/homo_sapiens_core_98_38_genes.json.gz
+excluded-biotypes:
+  expression_atlas:
+  - IG_C_pseudogene
+  - IG_J_pseudogene
+  - IG_pseudogene
+  - IG_V_pseudogene
+  - polymorphic_pseudogene
+  - processed_pseudogene
+  - pseudogene
+  - rRNA
+  - rRNA_pseudogene
+  - snoRNA
+  - snRNA
+  - transcribed_processed_pseudogene
+  - transcribed_unitary_pseudogene
+  - transcribed_unprocessed_pseudogene
+  - TR_J_pseudogene
+  - TR_V_pseudogene
+  - unitary_pseudogene
+  - unprocessed_pseudogene
+gene-data-plugin-names:
+- HGNC
+- Orthologs
+- Ensembl
+- Uniprot
+- ChEMBL
+- MousePhenotypes
+- Hallmarks
+- CancerBiomarkers
+- ChemicalProbes
+- Tractability
+- Safety
+hallmark: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/cosmic-hallmarks-2019-05-15.tsv.gz
+hgnc-complete-set: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/hgnc_complete_set-2019-10-31.json
+hgnc-orthologs: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/human_all_hcop_sixteen_column-2019-10-31.txt.gz
+hgnc-orthologs-species:
+- 9606-human
+- 9598-chimpanzee
+- 9544-macaque
+- 10090-mouse
+- 10116-rat
+- 9615-dog
+- 9823-pig
+- 8364-frog
+- 7955-zebrafish
+- 7227-fly
+- 6239-worm
+- 4932-yeast
+hpa-normal-tissue: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/normal_tissue-2019-10-31.tsv.zip
+hpa-rna-level: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/expatlas.blueprint2.baseline.binned_v2-2019-10-31.tsv
+hpa-rna-value: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/exp_summary_NormCounts_genes_all_Blueprint2_v2-2019-10-31.txt
+hpa-rna-zscore: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/expatlas.blueprint2.baseline.z-score.binned_v2-2019-10-31.tsv
+input-file:
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/uniprot-2019-11-21.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/slapenrich-2018-11-29.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/crispr-2019-08-21.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/gwas-2019-10-28.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/eva-2019-10-17.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/cosmic-2019-11-13.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/sysbio-2019-01-31.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/progeny-2018-07-23.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/phenodigm-2019-10-30.json.gz
+#- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/epmc-2019-10-28.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/intogen-2019-08-16.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/genomics_england-2018-10-02.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/reactome-2019-10-28.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/chembl-2019-08-16.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/gene2phenotype-2019-08-19.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/atlas-2019-10-31.json.gz
+- https://storage.googleapis.com/open-targets-data-releases/19.11/input/evidence-files/phewas_catalog-2018-11-28.json.gz
+is_direct_do_not_propagate:
+- expression_atlas
+mouse-phenotypes-orthology: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/HMD_HumanPhenotype-2019-10-31.rpt
+mouse-phenotypes-report: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/MGI_PhenoGenoMP-2019-10-31.rpt
+ontology-eco: https://raw.githubusercontent.com/evidenceontology/evidenceontology/v2018-11-10/eco.owl
+ontology-efo: https://github.com/EBISPOT/efo/releases/download/v3.11.0/efo_otar_slim.owl
+ontology-hpo: https://raw.githubusercontent.com/obophenotype/human-phenotype-ontology/v2018-10-09/hp.owl
+ontology-mp: http://www.informatics.jax.org/downloads/reports/mp.owl
+ontology-so: https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl
+reactome-pathway-data: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/ReactomePathways-2019-10-31.txt
+reactome-pathway-relation: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/ReactomePathwaysRelation-2019-10-31.txt
+safety: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/known_target_safety-2019-10-31.json
+schema: https://raw.githubusercontent.com/opentargets/json_schema/1.6.2/opentargets.json
+scoring_weights:
+  crisp: 1
+  europepmc: 0.2
+  expression_atlas: 0.2
+  phenodigm: 0.2
+  progeny: 0.5
+  slapenrich: 0.5
+  sysbio: 0.5
+tissue-curation-map: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/expression_hierarchy_curation-2019-10-31.tsv
+tissue-translation-map: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/map_with_efos-2019-10-31.json
+tractability: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/tractability_buckets-2019-10-31.tsv
+uniprot-uri: https://storage.googleapis.com/open-targets-data-releases/19.11/input/annotation-files/uniprot-2019-10-31.xml.gz
