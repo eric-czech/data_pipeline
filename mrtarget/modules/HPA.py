@@ -364,15 +364,6 @@ class HPADataDownloader(object):
         self.t2m = t2m
 
 
-    def get_normal_tissue_file(self):
-        import os.path as osp
-        import urllib.request
-        import tempfile
-        path = osp.join(tempfile.gettempdir(), osp.basename(self.normal_tissue_url))
-        if not osp.exists(path):
-            urllib.request.urlretrieve(self.normal_tissue_url, path)
-        return path 
-
     def retrieve_normal_tissue_data(self):
         """Parse 'normal_tissue' csv file,
         the expression profiles for proteins in human tissues from HPA
@@ -382,8 +373,7 @@ class HPADataDownloader(object):
         self.logger.info('get normal tissue rows into dicts')
         normal_tissue_file = self.get_normal_tissue_file()
         table = (
-            petl.fromcsv(petl.io.sources.ZipSource(normal_tissue_file, 'normal_tissue.tsv'), delimiter='\t', errors='replace')
-            #petl.fromcsv(petl.io.sources.URLSource(self.normal_tissue_url), delimiter='\t', errors='replace')
+            petl.fromcsv(petl.io.sources.URLSource(self.normal_tissue_url), delimiter='\t', errors='replace')
             .rename({'Tissue': 'tissue',
                      'Cell type': 'cell_type',
                      'Level': 'level',
