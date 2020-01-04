@@ -363,6 +363,16 @@ class HPADataDownloader(object):
 
         self.t2m = t2m
 
+
+    def get_normal_tissue_file(self):
+        import os.path as osp
+        import urllib.request
+        import tempfile
+        path = osp.join(tempfile.gettempdir(), osp.basename(self.normal_tissue_url))
+        if not osp.exists(path):
+            urllib.request.urlretrieve(self.normal_tissue_url, path)
+        return path 
+
     def retrieve_normal_tissue_data(self):
         """Parse 'normal_tissue' csv file,
         the expression profiles for proteins in human tissues from HPA
@@ -370,8 +380,10 @@ class HPADataDownloader(object):
         :return: dict
         """
         self.logger.info('get normal tissue rows into dicts')
+        normal_tissue_file = self.get_normal_tissue_file()
         table = (
-            petl.fromcsv(petl.io.sources.URLSource(self.normal_tissue_url), delimiter='\t')
+            petl.fromcsv(petl.io.sources.ZipSource(normal_tissue_file, 'normal_tissue.tsv'), delimiter='\t', errors='replace')
+            #petl.fromcsv(petl.io.sources.URLSource(self.normal_tissue_url), delimiter='\t', errors='replace')
             .rename({'Tissue': 'tissue',
                      'Cell type': 'cell_type',
                      'Level': 'level',
@@ -422,7 +434,7 @@ class HPADataDownloader(object):
         self.logger.info('get rna tissue rows into dicts')
         self.logger.debug('melting rna level table into geneid tissue level')
 
-        t_level = (petl.fromcsv(petl.io.sources.URLSource(self.rna_level_url), delimiter='\t')
+        t_level = (petl.fromcsv(petl.io.sources.URLSource(self.rna_level_url), delimiter='\t', errors='replace')
             .melt(key='ID', variablefield='tissue', valuefield='rna_level')
             .rename({'ID': 'gene'})
             .addfield('tissue_label',
@@ -436,7 +448,7 @@ class HPADataDownloader(object):
             .cutout('tissue')
         )
 
-        t_value = (petl.fromcsv(petl.io.sources.URLSource(self.rna_value_url), delimiter='\t')
+        t_value = (petl.fromcsv(petl.io.sources.URLSource(self.rna_value_url), delimiter='\t', errors='replace')
             .melt(key='ID', variablefield='tissue', valuefield='rna_value')
             .rename({'ID': 'gene'})
             .addfield('tissue_label',
@@ -447,7 +459,7 @@ class HPADataDownloader(object):
             .cutout('tissue')
         )
 
-        t_zscore = (petl.fromcsv(petl.io.sources.URLSource(self.rna_zscore_url), delimiter='\t')
+        t_zscore = (petl.fromcsv(petl.io.sources.URLSource(self.rna_zscore_url), delimiter='\t', errors='replace')
             .melt(key='ID', variablefield='tissue', valuefield='zscore_level')
             .rename({'ID': 'gene'})
             .addfield('tissue_label',
